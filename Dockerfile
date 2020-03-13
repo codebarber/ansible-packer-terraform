@@ -1,5 +1,7 @@
 FROM ubuntu:bionic-20200219
 
+ADD VERSION
+
 ARG TERRAFORM_VERSION="0.12.23"
 # TODO: currnet ubuntu ansible version 2.5.1 update to use variable
 # TODO: reduce size of image is pip or binary tarball better
