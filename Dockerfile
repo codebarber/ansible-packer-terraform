@@ -1,6 +1,6 @@
 FROM ubuntu:bionic-20200219
 
-ADD VERSION
+ADD VERSION .
 
 ARG TERRAFORM_VERSION="0.12.23"
 # TODO: currnet ubuntu ansible version 2.5.1 update to use variable
@@ -24,9 +24,7 @@ RUN apt-get update \
     && curl -LO https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip \
     && curl -LO https://releases.hashicorp.com/packer/${PACKER_VERSION}/packer_${PACKER_VERSION}_linux_amd64.zip \
     && unzip '*.zip' -d /usr/local/bin \
-    && rm *.zip
-
-RUN apt-get clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* *.zip
 
 CMD    ["/bin/bash"]
