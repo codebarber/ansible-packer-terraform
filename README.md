@@ -1,6 +1,11 @@
 # ansible-packer-terraform
 
-Builds a docker image with ansible, packer and terraform
+Builds a docker image containing:
+  
+  * ansible
+  * awscli
+  * packer
+  * terraform
 
 ## Building Docker Image
 ```bash
