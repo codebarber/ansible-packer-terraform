@@ -29,22 +29,42 @@ I'm adding the prefix d to the beginning of the command to indicate its a docker
 ```bash
 dansible () 
 {
-  docker run --rm -w /opt -v $(pwd):/opt/ -v ~/.aws:/root/.aws -v ~/.ssh:/root/.ssh codebarber/ansible-packer-terraform ansible $@
+  docker run --rm \
+             -w /opt \
+             -v $(pwd):/opt/ \
+             -v ~/.aws:/root/.aws \
+             -v ~/.ssh:/root/.ssh \
+             codebarber/ansible-packer-terraform ansible $@
 }
 
 daws () 
 {
-  docker run --rm -w /opt -v $(pwd):/opt/ -v ~/.aws:/root/.aws -v ~/.ssh:/root/.ssh codebarber/ansible-packer-terraform aws $@
+  docker run --rm \
+             -w /opt \
+             -v $(pwd):/opt/ \
+             -v ~/.aws:/root/.aws \
+             -v ~/.ssh:/root/.ssh \
+             codebarber/ansible-packer-terraform aws $@
 }
 
 dpacker () 
 {
-  docker run --rm -w /opt -v $(pwd):/opt/ -v ~/.aws:/root/.aws -v ~/.ssh:/root/.ssh codebarber/ansible-packer-terraform packer $@
+  docker run --rm \
+             -w /opt \
+             -v $(pwd):/opt/ \
+             -v ~/.aws:/root/.aws \
+             -v ~/.ssh:/root/.ssh \
+             codebarber/ansible-packer-terraform packer $@
 }
 
 dterraform () 
 {
-  docker run --rm -w /opt -v $(pwd):/opt/ -v ~/.aws:/root/.aws -v ~/.ssh:/root/.ssh codebarber/ansible-packer-terraform terraform $@
+  docker run --rm \
+             -w /opt \
+             -v $(pwd):/opt/ \
+             -v ~/.aws:/root/.aws \
+             -v ~/.ssh:/root/.ssh \
+             codebarber/ansible-packer-terraform terraform $@
 }
 ```
 
