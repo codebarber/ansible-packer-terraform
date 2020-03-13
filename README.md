@@ -86,11 +86,19 @@ ansible 2.5.1
 
 Under this section, I'm going to keep some notes here that might help others learning how to create docker images.
 
+v0.0.2 size:
+```
+base: bionic-20200219
+packages: 280
+codebarber/ansible-packer-terraform   latest   852MB
+Notes: Moved installation steps and cleanup under same RUN now cleanup works and saves 28MB
+```
+
 Initial size:
 ```
 base: bionic-20200219
 packages: 280
-codebarber/ansible-packer-terraform   latest   880MB
+codebarber/ansible-packer-terraform   v0.0.1   880MB
 Notes: ansible is default ubuntu package.
        packer/terraform are binary and awscli is pip install
 ```
