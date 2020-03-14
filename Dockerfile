@@ -1,4 +1,4 @@
-ARG ANSIBLE_VERSION="2.9.6"
+ARG ANSIBLE_VERSION="latest"
 ARG AWSCLI_VERSION="1.18.19"
 ARG PACKER_VERSION="1.5.4"
 ARG TERRAFORM_VERSION="0.12.23"
@@ -14,7 +14,12 @@ RUN set -eux \
                 openssl-dev \
                 python3 \
                 python3-dev
-
+				
+ARG ANSIBLE_VERSION="latest"
+ARG AWSCLI_VERSION="1.18.19"
+ARG PACKER_VERSION="1.5.4"
+ARG TERRAFORM_VERSION="0.12.23"
+ENV ANSIBLE_VERSION=${ANSIBLE_VERSION}
 RUN set -eux \
 	&& if [ "${ANSIBLE_VERSION}" = "latest" ]; then \
 		pip3 install --no-cache-dir --no-compile ansible; \
